@@ -1,0 +1,247 @@
+// ------------------------------------------------
+// Page
+//
+// All the other pages of the site, without any
+// particular layout.
+// ------------------------------------------------
+
+.site-content {
+	background-color: #f3f3f3;
+}
+
+.block.block-page {
+	min-height: 400px;
+	@media (max-width: $container-mobile) {
+		min-height: 300px;
+	}
+}
+
+a {
+	transition: 0.3s all;
+}
+
+.open-popup-link {
+	text-align: right;
+	color: $color-headings;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 700;
+	margin: 20px 0;
+}
+
+#product-popup {
+	input {
+		background-color: #fff;
+		padding: 25px;
+		margin: 0;
+		width: 700px;
+		max-width: 700px;
+		color: $color-headings;
+		border: 2px solid #cacaca;
+		@include responsive-font(2.4vw, 24px, 36px);
+		font-weight: 700;
+
+		@media (max-width: 757px) {
+			width: 100%;
+		}
+
+		&::placeholder {
+			color: $color-headings;
+		}
+	}
+
+	&:focus {
+		color: $color-headings;
+
+		&::placeholder {
+			color: $color-headings;
+		}
+	}
+}
+
+.container {
+	button.mfp-arrow,
+	button.mfp-close,
+	.mfp-close {
+		color: #fff;
+		text-align: center;
+		margin: 20px auto;
+		position: static;
+		opacity: 1;
+		text-transform: uppercase;
+		width: 100%;
+		height: auto;
+		text-decoration: underline;
+	}
+}
+
+.mfp-figure:after {
+	box-shadow: none !important;
+	background: transparent !important;
+}
+
+.mfp-image-holder,
+.mfp-iframe-holder {
+	img.mfp-img {
+		padding: 0 !important;
+	}
+	.mfp-close {
+		position: static;
+	}
+
+	.mfp-content {
+		height: auto;
+	}
+}
+
+.mfp-iframe-holder .mfp-close {
+	position: absolute;
+}
+
+.mfp-content {
+	height: 100%;
+	text-align: center;
+}
+
+#search-form-modal {
+	position: relative;
+	#clear {
+		cursor: pointer;
+		margin: auto -60px;
+		z-index: 99;
+
+		bottom: 0;
+		top: 0;
+		vertical-align: middle;
+		position: absolute;
+		background-color: #eae9e9;
+		width: 30px;
+		height: 30px;
+		border-radius: 30px;
+
+		@media (max-width: 757px) {
+			right: 80px;
+		}
+	}
+}
+
+#introduction {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		margin: 0 30px 0 0;
+		padding: 0;
+		display: inline-block;
+	}
+
+	a {
+		font-size: 20px;
+		color: #fff;
+	}
+
+	.current-menu-item a {
+		color: #fff !important;
+		background-color: transparent;
+	}
+}
+
+#other-pages {
+	text-align: center;
+	color: $color-darkgrey;
+
+	.left {
+		text-align: left;
+
+		input[type=submit] {
+			margin-top: 15px;
+		}
+	}
+
+	a {
+		color: $color-darkgrey;
+		margin-top: 20px;
+		font-weight: 600;
+	}
+
+	h1 {
+		font-weight: 400;
+	}
+
+	h2 {
+		margin-bottom: 10px;
+		font-weight: 600;
+		@include responsive-font(2.4vw, 24px, 26px);
+	}
+
+	h3 {
+		font-weight: 600;
+		font-size: 21px;
+	}
+
+	p {
+		margin-top: 0;
+		max-width: 750px;
+		margin: auto;
+	}
+
+	p:last-child {
+		margin-top: 20px;
+	}
+}
+
+#contact {
+	color: $color-darkgrey;
+
+	.form-contact {
+		@media (max-width: $responsivenav) {
+			margin-top: 40px;
+		}
+	}
+
+	@media (max-width: 601px) {
+		text-align: center;
+	}
+
+	h1 {
+		margin-bottom: 60px;
+		text-align: center;
+		font-weight: 400;
+	}
+
+	h3 {
+		font-size: 21px;
+		text-transform: uppercase;
+	}
+
+	p {
+		margin-top: 0px;
+	}
+
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		grid-gap: 15px;
+	}
+}
+
+span.wpcf7-list-item {
+	margin: 1em 0;
+}
+
+.embed-container iframe {
+	width: 100vw;
+	height: 56.25vw;
+	min-height: 100vh;
+	min-width: 177.77vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.centered-button {
+	position: relative;
+	cursor: pointer;
+}

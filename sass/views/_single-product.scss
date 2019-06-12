@@ -1,0 +1,164 @@
+#product-info {
+	background-color: #f3f3f3;
+}
+
+.product-description,
+.product-sales {
+	h1 {
+		color: $color-darkgrey;
+		font-weight: 600;
+		@include responsive-font(2.4vw, 24px, 26px);
+	}
+
+	h3 {
+		font-weight: 600;
+		color: $color-darkgrey;
+		@include responsive-font(2vw, 20px, 20px);
+	}
+
+	p {
+		color: $color-darkgrey;
+		@extend %small;
+	}
+
+	a {
+		color: $color-darkgrey;
+	}
+}
+
+.product-sales,
+#contact {
+	button,
+	.button,
+	input[type="text"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="password"],
+	input[type="number"],
+	input[type="month"],
+	input[type="week"],
+	input[type="email"],
+	input[type="search"],
+	input[type="submit"],
+	textarea {
+		margin: 8px 0;
+		width: 100% !important;
+	}
+
+	input[type="submit"] {
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+}
+
+.variation-pages {
+	@include responsive-font(1.8vw, 18px, 20px);
+	font-weight: 600;
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		padding: 0px 20px 0px 0;
+		display: inline-block;
+	}
+
+	li a {
+		color: $color-darkgrey;
+	}
+}
+
+.other-products {
+	h3 {
+		@include responsive-font(2.4vw, 24px, 26px);
+		border-bottom: 1px solid #979797;
+	}
+
+	.bottom-margin {
+		@media (max-width: 767px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	.alakategoria-tuote {
+		padding: 0 0 10px 0;
+		background-color: #fff;
+
+		a {
+			text-decoration: none;
+		}
+
+		.kategoria {
+			color: #666;
+			text-transform: uppercase;
+			padding: 20px;
+			font-size: 16px;
+			font-weight: 400;
+		}
+
+		h3 {
+			border: 0;
+			text-decoration: none;
+			color: #000;
+			font-size: 18px;
+			font-weight: 600;
+			padding: 0px 0px 0px 20px;
+		}
+	}
+}
+
+.margin {
+	margin: 0;
+	padding: 0 7px;
+}
+
+.upper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	.open-popup-link {
+		text-align: left;
+		color: #000;
+		text-transform: initial;
+		font-weight: 400;
+	}
+
+	#tarjouspyynto {
+		text-transform: uppercase;
+		margin: 20px 0;
+		text-align: right;
+	}
+}
+
+#product-form {
+	text-align: left;
+	padding: 25px;
+	background-color: #fff;
+	border: 2px solid $color-darkgrey;
+
+	p {
+		font-size: 18px;
+		text-align: left;
+		margin-bottom: 10px;
+	}
+
+	.mfp-close {
+		font-weight: 600;
+		text-transform: initial;
+		font-size: 18px;
+		color: $color-darkgrey;
+		margin: 0;
+		text-align: right;
+	}
+
+	h3 {
+		font-size: 18px;
+		text-transform: uppercase;
+		color: $color-darkgrey;
+	}
+
+	input[type="submit"] {
+		margin-top: 15px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+}
