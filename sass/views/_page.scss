@@ -241,7 +241,25 @@ span.wpcf7-list-item {
 	transform: translate(-50%, -50%);
 }
 
-.centered-button {
-	position: relative;
-	cursor: pointer;
+table {
+	display: block;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.play {
+	opacity: 0.8;
+	position: absolute;
+	bottom: 0;
+	top: 46%;
+	left: 47%;
+	list-style: none;
+	display: block;
+	text-align: center;
+	padding: 0;
+	width: 100%;
+
+	&:hover {
+		opacity: 1;
+	}
 }

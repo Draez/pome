@@ -53,7 +53,7 @@ get_header();
                         </div>
 
                         <a href="#product-popup" class="open-popup-link">
-                            <div class="open-popup-link">Hae tuotteita - <?php the_title(); ?></div>
+                            <div class="open-popup-link">Hae tuotteita</div>
                         </a>
 
 
@@ -63,6 +63,7 @@ get_header();
                 </div>
 
                 <div class="product_variation">
+
                     <?php echo do_shortcode('[wpb_childpages]'); ?>
                 </div>
 
@@ -100,21 +101,26 @@ get_header();
                                     <?php else : ?>
 
                                         <?php
-
                                         function getVimeoThumb($id)
                                         {
-                                            $data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
-                                            $data = json_decode($data);
-                                            return $data[0]->thumbnail_medium;
+                                            $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$id.php"));
+                                            echo $large = $vimeo[0]['thumbnail_large'];
                                         }
+
+
                                         ?>
 
-                                        <a class="popup-vimeo" href="https://vimeo.com/340414804">
+                                        <a class="popup-vimeo" href="<?php echo $carousel_video; ?>">
+                                            <?php
+                                            $str = preg_replace('/\D/', '', $carousel_video);
+                                            ?>
+                                            <div class="item" style="background-image: url(<?php getVimeoThumb($str); ?>); min-height: 450px;">
 
-                                            <div class="item" style="background-image: url(<?php getVimeoThumb(1185346); ?>); min-height: 450px;">
 
 
-
+                                            </div>
+                                            <div class="play">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/images/play.png">
                                             </div>
                                         </a>
 

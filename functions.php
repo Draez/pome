@@ -195,15 +195,16 @@ function data_fetch()
 
           global $post;
 
-          if (is_page() && $post->post_parent)
+          if (is_page() && $post->post_parent) {
 
-            $childpages = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0');
-          else
+            $childpages = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' . '&exclude=' . $post->ID);
+            $parent = wp_list_pages('child_of = 91&title_li=&include=' . $post->post_parent . '&echo=0');
+          } else {
             $childpages = wp_list_pages('sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0');
+          }
+          if ($childpages || $parent) {
 
-          if ($childpages) {
-
-            $string = '<ul class="variation-pages">' . $childpages . '</ul>';
+            $string = '<ul class="variation-pages">' . $parent . $childpages . '</ul>';
           }
 
           return $string;
