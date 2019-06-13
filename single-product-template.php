@@ -101,29 +101,18 @@ get_header();
                                     <?php else : ?>
 
                                         <?php
-                                        function getVimeoThumb($id)
-                                        {
-                                            $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$id.php"));
-                                            echo $large = $vimeo[0]['thumbnail_large'];
-                                        }
-
-
+                                        $str = preg_replace('/\D/', '', $carousel_video);
                                         ?>
 
-                                        <a class="popup-vimeo" href="<?php echo $carousel_video; ?>">
-                                            <?php
-                                            $str = preg_replace('/\D/', '', $carousel_video);
-                                            ?>
-                                            <div class="item" style="background-image: url(<?php getVimeoThumb($str); ?>); min-height: 450px;">
+                                        <div class="item" style="background-image: url(<?php getVimeoThumb($str); ?>); min-height: 450px;">
 
+                                            <a class="popup-vimeo" href="<?php echo $carousel_video; ?>">
 
-
-                                            </div>
-                                            <div class="play">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/images/play.png">
-                                            </div>
-                                        </a>
-
+                                                <div class="play">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/play.png">
+                                                </div>
+                                            </a>
+                                        </div>
 
                                     <?php endif; ?>
 

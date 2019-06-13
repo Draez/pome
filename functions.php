@@ -211,3 +211,10 @@ function data_fetch()
         }
 
         add_shortcode('wpb_childpages', 'wpb_list_child_pages');
+
+        function getVimeoThumb($id)
+        {
+          $vimeo = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$id.php"));
+          echo $large = $vimeo[0]['thumbnail_large'];
+          return true;
+        }

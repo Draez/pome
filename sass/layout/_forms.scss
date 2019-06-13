@@ -84,6 +84,12 @@ input {
 	}
 }
 
+input[type="date"]::before {
+	content: "Toivottu toimituspäivä" !important;
+	margin-right: 10px;
+	color: #969696;
+}
+
 textarea,
 select,
 input[type="text"],
@@ -105,6 +111,7 @@ input[type="date"] {
 	margin: 15px 0;
 	line-height: 24px;
 	transition: background .55s;
+	color: #969696;
 	text-decoration: none;
 	position: relative;
 	appearance: none;
